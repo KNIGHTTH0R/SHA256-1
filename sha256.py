@@ -2,6 +2,7 @@ import os
 import conversions
 import functions
 import input_padding
+import tkinter as tk
 
 # CREATE FILES CONTAINING INITIAL VALUES #
 """
