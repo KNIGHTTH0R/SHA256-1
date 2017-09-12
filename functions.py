@@ -3,6 +3,11 @@ def xor(A, B):
 		return 1
 	else:
 		return 0
+def _xor(A, B):
+	final = ""
+	for i in range(0, len(A)):
+		final += str(xor(A[i], B[i])
+	return final
 
 def _sum(A, B, C):
 	return xor(xor(A, B), C)
@@ -97,3 +102,17 @@ def right_shift(A, shift):
 	for i in range(0, len(A)-len(new_string)):
 		new_string = "0" + new_string
 	return new_string
+
+def sum0(A):
+	return _xor(_xor(right_rotation(A, len(A)-2), right_rotation(A, len(A)-13)), right_rotation(A, len(A)-22))
+
+def sum1(A):
+	return _xor(_xor(right_rotation(A, len(A)-6), right_rotation(A, len(A)-11)), right_rotation(A, len(A)-25))
+
+def sigma0(A):
+	return _xor(_xor(right_rotation(A, len(A)-7), right_rotation(A, len(A)-18)), right_shift(A, 3))
+
+def sigma1(A):
+	return _xor(_xor(right_rotation(A, len(A)-17), right_rotation(A, len(A)-19)), right_shift(A, 10))
+
+
