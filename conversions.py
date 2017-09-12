@@ -38,6 +38,8 @@ def decimal_to_binary(num, length=4):
 	(in a multiple of "length" bits).
 	"""
 	bin_num = ""
+	if num == 0:
+		bin_num += "0"*length
 
 	while num >= 1:
 		if int(num % 2) == 0:
