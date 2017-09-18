@@ -63,30 +63,14 @@ def hash(string):
 
 	# COLLECT INITIAL HASH VALUES FROM FILE #
 
-	f = open('initial_hash_values/H0_1', 'r')
-	A = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_2', 'r')
-	B = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_3', 'r')
-	C = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_4', 'r')
-	D = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_5', 'r')
-	E = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_6', 'r')
-	F = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_7', 'r')
-	G = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_8', 'r')
-	H = conversions.hex_to_binary(f.read())
-	f.close()
+	A = conversions.hex_to_binary(open('initial_hash_values/H0_1', 'r').read())
+	B = conversions.hex_to_binary(open('initial_hash_values/H0_2', 'r').read())
+	C = conversions.hex_to_binary(open('initial_hash_values/H0_3', 'r').read())
+	D = conversions.hex_to_binary(open('initial_hash_values/H0_4', 'r').read())
+	E = conversions.hex_to_binary(open('initial_hash_values/H0_5', 'r').read())
+	F = conversions.hex_to_binary(open('initial_hash_values/H0_6', 'r').read())
+	G = conversions.hex_to_binary(open('initial_hash_values/H0_7', 'r').read())
+	H = conversions.hex_to_binary(open('initial_hash_values/H0_8', 'r').read())
 
 	input_padding.blocking(string)
 	
@@ -119,30 +103,14 @@ def hash(string):
 
 	# RECOLLECTING THE INITIAL HASH VALUES #
 
-	f = open('initial_hash_values/H0_1', 'r')
-	H0_1 = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_2', 'r')
-	H0_2 = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_3', 'r')
-	H0_3 = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_4', 'r')
-	H0_4 = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_5', 'r')
-	H0_5 = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_6', 'r')
-	H0_6 = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_7', 'r')
-	H0_7 = conversions.hex_to_binary(f.read())
-	f.close()
-	f = open('initial_hash_values/H0_8', 'r')
-	H0_8 = conversions.hex_to_binary(f.read())
-	f.close()
+	H0_1 = conversions.hex_to_binary(open('initial_hash_values/H0_1', 'r').read())
+	H0_2 = conversions.hex_to_binary(open('initial_hash_values/H0_2', 'r').read())
+	H0_3 = conversions.hex_to_binary(open('initial_hash_values/H0_3', 'r').read())
+	H0_4 = conversions.hex_to_binary(open('initial_hash_values/H0_4', 'r').read())
+	H0_5 = conversions.hex_to_binary(open('initial_hash_values/H0_5', 'r').read())
+	H0_6 = conversions.hex_to_binary(open('initial_hash_values/H0_6', 'r').read())
+	H0_7 = conversions.hex_to_binary(open('initial_hash_values/H0_7', 'r').read())
+	H0_8 = conversions.hex_to_binary(open('initial_hash_values/H0_8', 'r').read())
 
 	# FINAL ADDITION OF LAST HASHING VALUES WITH THE INITIAL ONES #
 
@@ -155,8 +123,7 @@ def hash(string):
 	H7 = functions.binary_adder(H0_7, G)
 	H8 = functions.binary_adder(H0_8, H)
 
-	SHA256FINAL = conversions.binary_to_hex(H1+H2+H3+H4+H5+H6+H7+H8)
-	return SHA256FINAL
+	return conversions.binary_to_hex(H1+H2+H3+H4+H5+H6+H7+H8)
 
 output.pack()
 root.mainloop()
